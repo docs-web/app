@@ -1,15 +1,15 @@
 const hti = document.getElementById("hti");
 const nav_bar = document.getElementById("nav_bar");
 const documents = document.getElementById('cards');
-// if (window.navigator.standalone) {
-//     hti.style.display = "none"
-//     nav_bar.style.display = "flex";
-//     documents.style.display = "flex";
-// } else {
-//     hti.style.display = "flex";
-//     nav_bar.style.display = "none";
-//     documents.style.display = "none";
-// }
+if (window.navigator.standalone) {
+    hti.style.display = "none"
+    nav_bar.style.display = "flex";
+    documents.style.display = "flex";
+} else {
+    hti.style.display = "flex";
+    nav_bar.style.display = "none";
+    documents.style.display = "none";
+}
 
 var queryString = window.location.search;
 var params = new URLSearchParams(queryString);

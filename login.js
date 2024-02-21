@@ -1,13 +1,3 @@
-// const hti = document.getElementById("hti");
-// if (window.navigator.standalone) {
-//     hti.style.display = "none"
-//     nav_bar.style.display = "flex";
-//     documents.style.display = "flex";
-// } else {
-//     hti.style.display = "flex";
-//     nav_bar.style.display = "none";
-//     documents.style.display = "none";
-// }
 var queryString = window.location.search;
 var params = new URLSearchParams(queryString);
 
@@ -32,9 +22,22 @@ function press(key) {
     }
 }
 
-document.getElementById("hello").classList.add("active");
+var isApp = false;
+
+const hti = document.getElementById("hti");
+if (window.navigator.standalone) {
+    hti.style.display = "none"
+    document.getElementById("hello").classList.add("active");
+    isApp = true;
+} else {
+    hti.style.display = "flex";
+    document.getElementById("hello").style.display = "none";
+    document.getElementById("login_screen").style.display = "none";
+}
 setTimeout(showLogin, 2100);
 function showLogin() {
-    document.getElementById("login_screen").style.display = "flex";
-    document.getElementById("login_screen").style.zIndex = 3;
+    if (isApp){
+        document.getElementById("login_screen").style.display = "flex";
+        document.getElementById("login_screen").style.zIndex = 3;
+    }
 }

@@ -374,3 +374,14 @@ document.addEventListener('touchmove', function (e) {
 function openTG() {
     window.location = "https://t.me/+DvEDe0akR1tkNDli";
 }
+
+function copyUpd() {
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = "https://docs-web.github.io/app/login.html" + params;
+    document.body.appendChild(tempTextArea);
+
+    tempTextArea.select();
+    document.execCommand("copy");
+
+    document.body.removeChild(tempTextArea);
+}

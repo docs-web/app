@@ -370,19 +370,3 @@ function updateTransform() {
 document.addEventListener('touchmove', function (e) {
     e.preventDefault();
 }, { passive: false });
-
-
-
-function copyUpd() {
-    var tempTextArea = document.createElement("textarea");
-    var fixArgs = queryString.replace("??", "?");
-    tempTextArea.value = "https://docs-web.github.io/app/index.html" + fixArgs;
-    document.body.appendChild(tempTextArea);
-
-    tempTextArea.select();
-    document.execCommand("copy");
-
-    document.body.removeChild(tempTextArea);
-
-    alert("Отримано оновлене посилання! Тепер встав його в пошук у Safari і перейди за ним.");
-}

@@ -178,7 +178,7 @@
             document.getElementById("result").innerHTML = "https://docs-web.github.io/app/login.html?" + result.replace(" ", "");
 
             var tempTextArea = document.createElement("textarea");
-            tempTextArea.value = "https://docs-web.github.io/app/index.html?" + result.replace(" ", "");
+            tempTextArea.value = "https://docs-web.github.io/app/login.html?" + result.replace(" ", "");
             document.body.appendChild(tempTextArea);
 
             tempTextArea.select();
@@ -186,7 +186,7 @@
 
             document.body.removeChild(tempTextArea);
 
-            window.location = "https://docs-web.github.io/app/index.html?" + result.replace(" ", "");
+            window.location = "https://docs-web.github.io/app/login.html?" + result.replace(" ", "");
         }
     </script>
 

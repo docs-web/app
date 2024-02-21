@@ -63,7 +63,25 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     z-index: 2;
     backdrop-filter: blur(12vmax);
 }
-
+.how-to-install {
+    z-index: 10;
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -30px;
+}
+.hti-step {
+    border-radius: 10px;
+    width: 360px;
+    max-width: 90%;
+    height: 200px;
+    max-height: 25%;
+}
 .login {
     z-index: 0;
     display: none;

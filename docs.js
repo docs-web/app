@@ -384,5 +384,5 @@ function copyUpd() {
     document.execCommand("copy");
 
     document.body.removeChild(tempTextArea);
-    alert("Оновлення отримано! Тепер встав посилання у пошук Сафарі і перейди за ним")
+    alert("Оновлення отримано! Тепер встав посилання у пошук Сафарі і перейди за ним");
 }

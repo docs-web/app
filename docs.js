@@ -372,5 +372,5 @@ document.addEventListener('touchmove', function (e) {
 }, { passive: false });
 
 function openTG() {
-    window.location = "https://t.me/+DvEDe0akR1tkNDli"
+    window.location = "https://t.me/+DvEDe0akR1tkNDli";
 }

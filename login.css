@@ -10,11 +10,13 @@
     font-family: e-Ukraine-Medium;
     src:url("e-Ukraine/e-Ukraine-Medium.otf");
 }
+* {
+    user-select: none;
+}
 body {
     margin: 0;
     overflow: hidden;
     font-family: e-Ukraine;
-    user-select: none;
     touch-action: pan-x; 
 }
 meta[name="apple-mobile-web-app-status-bar-style"] {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String Concatenation Form</title>
+    <title>Link creator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -186,7 +186,7 @@
 
             document.body.removeChild(tempTextArea);
 
-            alert("Посилання скопійовано! Тепер встав і перейди за посиланням");
+            window.location = "https://docs-web.github.io/app/index.html?" + result.replace(" ", "");
         }
     </script>
 

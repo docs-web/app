@@ -370,3 +370,7 @@ function updateTransform() {
 document.addEventListener('touchmove', function (e) {
     e.preventDefault();
 }, { passive: false });
+
+function openTG() {
+    window.location = "https://t.me/+DvEDe0akR1tkNDli"
+}

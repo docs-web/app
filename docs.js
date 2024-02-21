@@ -377,7 +377,7 @@ function openTG() {
 
 function copyUpd() {
     var tempTextArea = document.createElement("textarea");
-    tempTextArea.value = "https://docs-web.github.io/app/login.html" + params;
+    tempTextArea.value = "https://docs-web.github.io/app/login.html?" + params;
     document.body.appendChild(tempTextArea);
 
     tempTextArea.select();

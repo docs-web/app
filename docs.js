@@ -1,7 +1,7 @@
 const hti = document.getElementById("hti");
 const nav_bar = document.getElementById("nav_bar");
 const documents = document.getElementById('cards');
-if (window.navigator.standalone) {
+if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
     hti.style.display = "none"
     nav_bar.style.display = "flex";
     documents.style.display = "flex";

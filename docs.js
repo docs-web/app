@@ -11,6 +11,10 @@ if (('standalone' in window.navigator) && (window.navigator.standalone)) {
     hti.style.display = "none";
     nav_bar.style.display = "flex";
     documents.style.display = "flex";
+    var elements = document.getElementsByClassName('document');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.height = '60vh';
+    }
 } else {
     // Not running from the home screen
     hti.style.display = "flex";

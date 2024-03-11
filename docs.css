@@ -130,7 +130,7 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     width: 80vw;
     max-width: 350px;
     transform-style: preserve-3d;
-    position: relative; /* Add this line */
+    position: relative;
 }
 @keyframes flip {
     from {

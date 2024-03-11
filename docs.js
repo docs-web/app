@@ -14,7 +14,7 @@ if (('standalone' in window.navigator) && (window.navigator.standalone)) {
     var elements = document.getElementsByClassName('document');
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.height = '60vh';
-        elements[i].style.margin = 'auto -30px';
+        elements[i].style.margin = '-30px 10vw 0px';
     }
 } else {
     // Not running from the home screen

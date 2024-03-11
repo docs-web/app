@@ -13,7 +13,8 @@ if (('standalone' in window.navigator) && (window.navigator.standalone)) {
     documents.style.display = "flex";
     var elements = document.getElementsByClassName('document');
     for (var i = 0; i < elements.length; i++) {
-        elements[i].style.height = '65vh';
+        elements[i].style.height = '60vh';
+        elements[i].style.margin = 'auto -30px';
     }
 } else {
     // Not running from the home screen

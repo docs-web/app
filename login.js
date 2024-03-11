@@ -22,7 +22,7 @@ function press(key) {
 var isApp = false;
 // const hti = document.getElementById("hti");
 // if (window.navigator.standalone) {
-//   hti.style.display = "none";
+  hti.style.display = "none";
   document.getElementById("hello").classList.add("active");
   isApp = true;
 // } else {

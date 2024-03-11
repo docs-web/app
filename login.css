@@ -1,0 +1,175 @@
+@font-face {
+    font-family: e-Ukraine;
+    src:url("e-Ukraine/e-Ukraine-Regular.otf");
+}
+@font-face {
+    font-family: e-Ukraine-Light;
+    src:url("e-Ukraine/e-Ukraine-Light.otf");
+}
+@font-face {
+    font-family: e-Ukraine-Medium;
+    src:url("e-Ukraine/e-Ukraine-Medium.otf");
+}
+* {
+    user-select: none;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: e-Ukraine;
+    touch-action: pan-x; 
+}
+meta[name="apple-mobile-web-app-status-bar-style"] {
+    content: default;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+        scale: 7;
+    }
+
+    50% {
+        scale: 10;
+    }
+
+    to {
+        rotate: 360deg;
+        scale: 7;
+    }
+}
+.effects {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+#background {
+    z-index: 1;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    translate: -50% -50%;
+    background: linear-gradient(to right, rgb(223, 255, 127), rgb(112, 202, 216), rgb(216, 139, 255));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+}
+
+#blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+}
+.how-to-install {
+    z-index: 10;
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -30px;
+}
+.hti-step {
+    border-radius: 10px;
+    width: 360px;
+    max-width: 90%;
+    height: 200px;
+    max-height: 25%;
+}
+.login {
+    z-index: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.info {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+.input {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.circle-button {
+    border: 1px black solid;
+    border-radius: 90px;
+    width: 10px;
+    height: 10px;
+}
+.keyboard {
+    margin-top: 4vh;
+    justify-content: center;
+    display: grid;
+    gap: 10px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+.key {
+    border: 3px black solid;
+    border-radius: 90px;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.key p {
+    font: e-Ukraine;
+    font-size: 20px;
+}
+.func-button {
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.func-button img {
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+@keyframes hello-animation {
+    from {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 100;
+    }
+
+    90% {
+        opacity: 100;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.hello {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 5;
+    margin-top: 100px;
+    font-size: 24px;
+}
+.hello.active {
+    animation: hello-animation 2s linear;
+}

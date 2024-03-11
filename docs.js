@@ -1,11 +1,18 @@
 const hti = document.getElementById("hti");
 const nav_bar = document.getElementById("nav_bar");
 const documents = document.getElementById('cards');
-if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
-    hti.style.display = "none"
+if (('standalone' in window.navigator) && (window.navigator.standalone)) {
+    // Running from the home screen on iOS
+    hti.style.display = "none";
+    nav_bar.style.display = "flex";
+    documents.style.display = "flex";
+} else if (window.matchMedia('(display-mode: standalone)').matches) {
+    // Running from the home screen on Android
+    hti.style.display = "none";
     nav_bar.style.display = "flex";
     documents.style.display = "flex";
 } else {
+    // Not running from the home screen
     hti.style.display = "flex";
     nav_bar.style.display = "none";
     documents.style.display = "none";

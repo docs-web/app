@@ -16,11 +16,14 @@
         <div id="background"></div>
         <div id="blur"></div>
     </div>
+    <div class="close-check-doc" onclick="close_window()">
+        <img src="assets/close-checked-document.png">
+    </div>
     <div class="check-docs">Перевірка документів</div>
     <div class="cards" id="cards">
         <!-- passport -->
-        <div class="card-wrapper">
-            <div class="document hidden" id="passport">
+        <div class="card-wrapper hidden" id="passport_w">
+            <div class="document" id="passport">
                 <div class="document-inside">
                     <div class="document__wrapper">
                     <h2 id="doc-type">Паспорт громадянина України</h2>
@@ -47,6 +50,7 @@
                     <p class="running-str-p isRunning">• Документ дійсний</p>
                     <p class="running-str-p isRunning">• Документ дійсний</p>
                     <p class="running-str-p isRunning">• Документ дійсний</p>
+                    <p class="running-str-p isRunning">• Документ дійсний</p>
                 </div>
                 <div class="full-name">
                     <p class="surname">Прізвище</p>
@@ -57,8 +61,8 @@
             </div>
         </div>
         <!-- international passport -->
-        <div class="card-wrapper">
-            <div class="document hidden" id="international-passport">
+        <div class="card-wrapper hidden" id="international-passport_w">
+            <div class="document" id="international-passport">
                 <div class="document-inside">
                     <div class="document__wrapper doc-interpass">
                         <h2 id="doc-type">Закордонний паспорт</h2>
@@ -95,8 +99,8 @@
             </div>
         </div>
         <!-- drive license -->
-        <div class="card-wrapper">
-            <div class="document hidden" id="driver-license">
+        <div class="card-wrapper hidden" id="driver-license_w">
+            <div class="document" id="driver-license">
                 <div class="document-inside">
                     <div class="document__wrapper">
                         <h2 id="doc-type">Посвідчення водія</h2>
@@ -134,8 +138,8 @@
             </div>
         </div>
         <!-- tax ID -->
-        <div class="card-wrapper">
-            <div class="document hidden" id="tax-card">
+        <div class="card-wrapper hidden" id="tax-card_w">
+            <div class="document" id="tax-card">
                 <div class="document-inside">
                     <div class="document__wrapper">
                         <h2 id="doc-type">Картка платника податків</h2>
@@ -161,9 +165,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="close-check-doc" onclick="close_window()">
-        <img src="assets/close-checked-document.png">
     </div>
 </body>
 <script src="check.js"></script>

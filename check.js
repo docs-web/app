@@ -124,4 +124,8 @@ function close_window() {
     window.location = "https://google.com"
 }
 setTimeout(close_window, 30*1000);
-document.getElementById(params.get("doc-id")).classList.remove("hidden");
+document.getElementById(params.get("doc-id")+"_w").classList.remove("hidden");
+const hiddenElements = document.getElementsByClassName("hidden");
+Array.from(hiddenElements).forEach((doc) => {
+    doc.remove();
+});

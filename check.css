@@ -63,7 +63,7 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     background-color: rgba(38, 38, 38, 0.8);
 }
 .check-docs {
-    margin-top: 8vh;
+    margin-top: 10vh;
     z-index: 3;
     position: absolute;
     color: whitesmoke;
@@ -74,7 +74,7 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     font-size: 16px;
 }
 .close-check-doc {
-    top: 40px;
+    top: 3vh;
     z-index: 3;
     position: absolute;
     display: flex;
@@ -91,25 +91,27 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     place-items: center;
     height: 100%;
     perspective: 1000px;
-    width: 200vw;
+    width: 100vw;
     transition: transform 0.5s ease;
 }
 .card-wrapper {
     display: flex;
     place-items: center;
-    height: 100vh;
-    width: 100vw;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
     perspective: 1000px;
     user-select: none;
     touch-action: pan-y; 
 }
 .document {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 20px;
-    height: 60vh;
-    width: 80vw;
+    height: 60%;
+    width: 80%;
     max-width: 350px;
+    max-height: 540px;
     transform-style: preserve-3d;
     position: relative; /* Add this line */
 }
@@ -198,7 +200,7 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     }
 
     to {
-        transform: translateX(-280px);
+        transform: translateX(-141px);
     }
 }
 .running-string p {
@@ -208,7 +210,7 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     font-size: 12px;
 }
 .running-string p.isRunning {
-    animation: run_right-to-left linear 8s infinite;
+    animation: run_right-to-left linear 5s infinite;
 }
 .running-string p:not(.isRunning) {
     animation: paused;

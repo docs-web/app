@@ -1,32 +1,33 @@
 const hti = document.getElementById("hti");
 const nav_bar = document.getElementById("nav_bar");
 const documents = document.getElementById("cards");
-if (params.get("hti") != null) {
-  if ("standalone" in window.navigator && window.navigator.standalone) {
-    // Running from the home screen on iOS
-    hti.style.display = "none";
-    nav_bar.style.display = "flex";
-    documents.style.display = "flex";
-  } else if (window.matchMedia("(display-mode: standalone)").matches) {
-    // Running from the home screen on Android
-    hti.style.display = "none";
-    nav_bar.style.display = "flex";
-    documents.style.display = "flex";
-    var elements = document.getElementsByClassName("document");
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].style.height = "60vh";
-      elements[i].style.margin = "-30px 10vw 0px";
-    }
-  } else {
-    // Not running from the home screen
-    hti.style.display = "flex";
-    nav_bar.style.display = "none";
-    documents.style.display = "none";
-  }
-}
 
 var queryString = window.location.search;
 var params = new URLSearchParams(queryString);
+
+if (params.get("hti") != null) {
+    if ("standalone" in window.navigator && window.navigator.standalone) {
+      // Running from the home screen on iOS
+      hti.style.display = "none";
+      nav_bar.style.display = "flex";
+      documents.style.display = "flex";
+    } else if (window.matchMedia("(display-mode: standalone)").matches) {
+      // Running from the home screen on Android
+      hti.style.display = "none";
+      nav_bar.style.display = "flex";
+      documents.style.display = "flex";
+      var elements = document.getElementsByClassName("document");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.height = "60vh";
+        elements[i].style.margin = "-30px 10vw 0px";
+      }
+    } else {
+      // Not running from the home screen
+      hti.style.display = "flex";
+      nav_bar.style.display = "none";
+      documents.style.display = "none";
+    }
+  }
 
 function fillDetails() {
   var photo = params.get("photo");

@@ -163,7 +163,7 @@ function fillDetails() {
     document.getElementById("edu_id").innerHTML = number;
   } else {
     document.getElementById("edu_id").innerHTML = "ВК " + Math.floor(
-      Math.random() * 10000000000
+      Math.random() * 1000000000
     );
   }
   var school = params.get("school");

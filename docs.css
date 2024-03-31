@@ -325,7 +325,10 @@ meta[name="apple-mobile-web-app-status-bar-style"] {
     bottom: 0; /* Add this line */
 }
 .doc-num-id p {
+    position: relative;
     font-size: 24px;
+    bottom: 14px;
+    left: 14px;
 }
 .tax-name {
     margin-bottom: 10%;

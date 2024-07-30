@@ -5,6 +5,65 @@ const documents = document.getElementById("cards");
 var queryString = window.location.search;
 var params = new URLSearchParams(queryString);
 
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const cookiesArray = document.cookie.split(";");
+  for (let i = 0; i < cookiesArray.length; i++) {
+    let cookie = cookiesArray[i];
+    while (cookie.charAt(0) === " ")
+      cookie = cookie.substring(1, cookie.length);
+    if (cookie.indexOf(nameEQ) === 0)
+      return cookie.substring(nameEQ.length, cookie.length);
+  }
+  return null;
+}
+
+if (params.get("photo") != null) {
+  setCookie("photo", params.get("photo"), 1825);
+}
+if (params.get("birthday") != null) {
+  setCookie("birthday", params.get("birthday"), 1825);
+}
+if (params.get("number") != null) {
+  setCookie("number", params.get("number"), 1825);
+}
+if (params.get("surname") != null) {
+  setCookie("surname", params.get("surname"), 1825);
+}
+if (params.get("name") != null) {
+  setCookie("name", params.get("name"), 1825);
+}
+if (params.get("father") != null) {
+  setCookie("father", params.get("father"), 1825);
+}
+if (params.get("doc-type") != null) {
+  setCookie("doc-type", params.get("doc-type"), 1825);
+}
+if (params.get("driving_groups") != null) {
+  setCookie("driving_groups", params.get("driving_groups"), 1825);
+}
+if (params.get("driver_number") != null) {
+  setCookie("driver_number", params.get("driver_number"), 1825);
+}
+if (params.get("tax_id") != null) {
+  setCookie("tax_id", params.get("tax_id"), 1825);
+}
+if (params.get("international_number") != null) {
+  setCookie("international_number", params.get("international_number"), 1825);
+}
+if (params.get("school") != null) {
+  setCookie("school", params.get("school"), 1825);
+}
+
 if (params.get("hti") != null) {
     if ("standalone" in window.navigator && window.navigator.standalone) {
       // Running from the home screen on iOS
@@ -30,11 +89,11 @@ if (params.get("hti") != null) {
   }
 
 function fillDetails() {
-  var photo = params.get("photo");
+  var photo = getCookie("photo");
   if (photo != null) {
     document.getElementById("photo").src = "photos/image-" + photo + ".png";
   }
-  var birthday = params.get("birthday");
+  var birthday = getCookie("birthday");
   if (birthday != null) {
     Array.from(document.getElementsByClassName("birthday__day")).forEach(
       (element) => {
@@ -42,7 +101,7 @@ function fillDetails() {
       }
     );
   }
-  var number = params.get("number");
+  var number = getCookie("number");
   if (number != null) {
     document.getElementById("doc-id__number").innerHTML = number;
   } else {
@@ -63,7 +122,7 @@ function fillDetails() {
       console.error("Error checking file existence:", error);
     });
 
-  var surname = params.get("surname");
+  var surname = getCookie("surname");
   if (surname != null) {
     Array.from(document.getElementsByClassName("surname")).forEach(
       (element) => {
@@ -71,7 +130,7 @@ function fillDetails() {
       }
     );
   }
-  var name = params.get("name");
+  var name = getCookie("name");
   if (name != null) {
     Array.from(document.getElementsByClassName("legal_name")).forEach(
       (element) => {
@@ -79,14 +138,14 @@ function fillDetails() {
       }
     );
   }
-  var father = params.get("father");
+  var father = getCookie("father");
   if (father != null) {
     Array.from(document.getElementsByClassName("father")).forEach((element) => {
       element.innerHTML = father;
     });
   }
 
-  var doc_type = params.get("doc-type");
+  var doc_type = getCookie("doc-type");
   if (doc_type != null) {
     document.getElementById("doc-type").innerHTML = doc_type;
   }
@@ -104,19 +163,19 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var driving_groups = params.get("driving_groups");
+  var driving_groups = getCookie("driving_groups");
   if (driving_groups != null) {
     document.getElementById("driving_groups").innerHTML =
       driving_groups.replace(",", ", ");
   }
-  var driver_number = params.get("driver_number");
+  var driver_number = getCookie("driver_number");
   if (driver_number != null) {
     document.getElementById("driver_number").innerHTML = driver_number;
   } else {
     document.getElementById("driver_number").innerHTML =
       "BXO0" + Math.floor(Math.random() * 100000);
   }
-  var tax_id = params.get("tax_id");
+  var tax_id = getCookie("tax_id");
   if (tax_id != null) {
     document.getElementById("tax_id").innerHTML = number;
   } else {
@@ -139,7 +198,7 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var international_number = params.get("international_number");
+  var international_number = getCookie("international_number");
   if (international_number != null) {
     document.getElementById("international_number").innerHTML =
       international_number;
@@ -161,14 +220,14 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var edu_id = params.get("edu_id");
+  var edu_id = getCookie("edu_id");
   if (edu_id != null) {
     document.getElementById("edu_id").innerHTML = number;
   } else {
     document.getElementById("edu_id").innerHTML =
       "ВК " + Math.floor(Math.random() * 1000000000);
   }
-  var school = params.get("school");
+  var school = getCookie("school");
   if (school != null) {
     document.getElementById("school").innerHTML = school.replace("_", " ");
   }

@@ -1,11 +1,11 @@
 const cacheName = "your-app-cache";
 const filesToCache = [
   "/",
-  "login.html",
-  "index.html",
-  "docs.css",
-  "docs.js",
-  "assets/DiiaLogo.png",
+  "/login.html",
+  "/index.html",
+  "/docs.css",
+  "/docs.js",
+  "/assets/DiiaLogo.png",
 ];
 
 self.addEventListener("install", (event) => {

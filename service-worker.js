@@ -1,6 +1,7 @@
 const cacheName = "your-app-cache";
 const filesToCache = [
   "/",
+  "login.html",
   "index.html",
   "styles.css",
   "script.js",

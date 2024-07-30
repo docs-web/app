@@ -145,11 +145,6 @@ function fillDetails() {
     });
   }
 
-  var doc_type = decodeURIComponent(getCookie("doc-type"));
-  if (doc_type != "null") {
-    document.getElementById("doc-type").innerHTML = doc_type;
-  }
-
   var driver_photo = "photos/driver-" + photo + ".png";
   fetch(driver_photo, { method: "HEAD" })
     .then((response) => {

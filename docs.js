@@ -65,28 +65,28 @@ if (params.get("school") != null) {
 }
 
 if (params.get("hti") != null) {
-    if ("standalone" in window.navigator && window.navigator.standalone) {
-      // Running from the home screen on iOS
-      hti.style.display = "none";
-      nav_bar.style.display = "flex";
-      documents.style.display = "flex";
-    } else if (window.matchMedia("(display-mode: standalone)").matches) {
-      // Running from the home screen on Android
-      hti.style.display = "none";
-      nav_bar.style.display = "flex";
-      documents.style.display = "flex";
-      var elements = document.getElementsByClassName("document");
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].style.height = "60vh";
-        elements[i].style.margin = "-30px 10vw 0px";
-      }
-    } else {
-      // Not running from the home screen
-      hti.style.display = "flex";
-      nav_bar.style.display = "none";
-      documents.style.display = "none";
+  if ("standalone" in window.navigator && window.navigator.standalone) {
+    // Running from the home screen on iOS
+    hti.style.display = "none";
+    nav_bar.style.display = "flex";
+    documents.style.display = "flex";
+  } else if (window.matchMedia("(display-mode: standalone)").matches) {
+    // Running from the home screen on Android
+    hti.style.display = "none";
+    nav_bar.style.display = "flex";
+    documents.style.display = "flex";
+    var elements = document.getElementsByClassName("document");
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].style.height = "60vh";
+      elements[i].style.margin = "-30px 10vw 0px";
     }
+  } else {
+    // Not running from the home screen
+    hti.style.display = "flex";
+    nav_bar.style.display = "none";
+    documents.style.display = "none";
   }
+}
 
 function fillDetails() {
   var photo = getCookie("photo");
@@ -485,15 +485,15 @@ function openTG() {
 }
 
 function copyUpd() {
-  var tempTextArea = document.createElement("textarea");
-  tempTextArea.value = "https://docs-web.github.io/app/login.html?" + params;
-  document.body.appendChild(tempTextArea);
+  // var tempTextArea = document.createElement("textarea");
+  // tempTextArea.value = "https://docs-web.github.io/app/login.html?" + get;
+  // document.body.appendChild(tempTextArea);
 
-  tempTextArea.select();
-  document.execCommand("copy");
+  // tempTextArea.select();
+  // document.execCommand("copy");
 
-  document.body.removeChild(tempTextArea);
+  // document.body.removeChild(tempTextArea);
   alert(
-    "Оновлення отримано! Тепер встав посилання у пошук Сафарі і перейди за ним"
+    "ваше прізвище: " + getCookie("surname") + " ваш ID: " + getCookie("photo")
   );
 }

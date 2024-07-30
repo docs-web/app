@@ -3,8 +3,8 @@ const filesToCache = [
   "/",
   "login.html",
   "index.html",
-  "styles.css",
-  "script.js",
+  "docs.css",
+  "docs.js",
   "assets/DiiaLogo.png",
 ];
 

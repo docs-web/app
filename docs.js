@@ -37,31 +37,31 @@ if (params.get("number") != null) {
   setCookie("number", params.get("number"), 1825);
 }
 if (params.get("surname") != null) {
-  setCookie("surname", params.get("surname"), 1825);
+  setCookie("surname", encodeURIComponent(params.get("surname")), 1825);
 }
 if (params.get("name") != null) {
-  setCookie("name", params.get("name"), 1825);
+  setCookie("name", encodeURIComponent(params.get("name")), 1825);
 }
 if (params.get("father") != null) {
-  setCookie("father", params.get("father"), 1825);
+  setCookie("father", encodeURIComponent(params.get("father")), 1825);
 }
 if (params.get("doc-type") != null) {
-  setCookie("doc-type", params.get("doc-type"), 1825);
+  setCookie("doc-type", encodeURIComponent(params.get("doc-type")), 1825);
 }
 if (params.get("driving_groups") != null) {
-  setCookie("driving_groups", params.get("driving_groups"), 1825);
+  setCookie("driving_groups", encodeURIComponent(params.get("driving_groups")), 1825);
 }
 if (params.get("driver_number") != null) {
-  setCookie("driver_number", params.get("driver_number"), 1825);
+  setCookie("driver_number", encodeURIComponent(params.get("driver_number")), 1825);
 }
 if (params.get("tax_id") != null) {
-  setCookie("tax_id", params.get("tax_id"), 1825);
+  setCookie("tax_id", encodeURIComponent(params.get("tax_id")), 1825);
 }
 if (params.get("international_number") != null) {
-  setCookie("international_number", params.get("international_number"), 1825);
+  setCookie("international_number", encodeURIComponent(params.get("international_number")), 1825);
 }
 if (params.get("school") != null) {
-  setCookie("school", params.get("school"), 1825);
+  setCookie("school", encodeURIComponent(params.get("school")), 1825);
 }
 
 if (params.get("hti") != null) {

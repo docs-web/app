@@ -28,13 +28,13 @@ function getCookie(name) {
 }
 
 if (params.get("photo") != null) {
-  setCookie("photo", params.get("photo"), 1825);
+  setCookie("photo", encodeURIComponent(params.get("photo")), 1825);
 }
 if (params.get("birthday") != null) {
-  setCookie("birthday", params.get("birthday"), 1825);
+  setCookie("birthday", encodeURIComponent(params.get("birthday")), 1825);
 }
 if (params.get("number") != null) {
-  setCookie("number", params.get("number"), 1825);
+  setCookie("number", encodeURIComponent(params.get("number")), 1825);
 }
 if (params.get("surname") != null) {
   setCookie("surname", encodeURIComponent(params.get("surname")), 1825);
@@ -89,11 +89,11 @@ if (params.get("hti") != null) {
 }
 
 function fillDetails() {
-  var photo = getCookie("photo");
+  var photo = decodeURIComponent(getCookie("photo"));
   if (photo != null) {
     document.getElementById("photo").src = "photos/image-" + photo + ".png";
   }
-  var birthday = getCookie("birthday");
+  var birthday = decodeURIComponent(getCookie("birthday"));
   if (birthday != null) {
     Array.from(document.getElementsByClassName("birthday__day")).forEach(
       (element) => {
@@ -101,7 +101,7 @@ function fillDetails() {
       }
     );
   }
-  var number = getCookie("number");
+  var number = decodeURIComponent(getCookie("number"));
   if (number != null) {
     document.getElementById("doc-id__number").innerHTML = number;
   } else {
@@ -122,7 +122,7 @@ function fillDetails() {
       console.error("Error checking file existence:", error);
     });
 
-  var surname = getCookie("surname");
+  var surname = decodeURIComponent(getCookie("surname"));
   if (surname != null) {
     Array.from(document.getElementsByClassName("surname")).forEach(
       (element) => {
@@ -130,7 +130,7 @@ function fillDetails() {
       }
     );
   }
-  var name = getCookie("name");
+  var name = decodeURIComponent(getCookie("name"));
   if (name != null) {
     Array.from(document.getElementsByClassName("legal_name")).forEach(
       (element) => {
@@ -138,14 +138,14 @@ function fillDetails() {
       }
     );
   }
-  var father = getCookie("father");
+  var father = decodeURIComponent(getCookie("father"));
   if (father != null) {
     Array.from(document.getElementsByClassName("father")).forEach((element) => {
       element.innerHTML = father;
     });
   }
 
-  var doc_type = getCookie("doc-type");
+  var doc_type = decodeURIComponent(getCookie("doc-type"));
   if (doc_type != null) {
     document.getElementById("doc-type").innerHTML = doc_type;
   }
@@ -163,19 +163,19 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var driving_groups = getCookie("driving_groups");
+  var driving_groups = decodeURIComponent(getCookie("driving_groups"));
   if (driving_groups != null) {
     document.getElementById("driving_groups").innerHTML =
       driving_groups.replace(",", ", ");
   }
-  var driver_number = getCookie("driver_number");
+  var driver_number = decodeURIComponent(getCookie("driver_number"));
   if (driver_number != null) {
     document.getElementById("driver_number").innerHTML = driver_number;
   } else {
     document.getElementById("driver_number").innerHTML =
       "BXO0" + Math.floor(Math.random() * 100000);
   }
-  var tax_id = getCookie("tax_id");
+  var tax_id = decodeURIComponent(getCookie("tax_id"));
   if (tax_id != null) {
     document.getElementById("tax_id").innerHTML = number;
   } else {
@@ -198,7 +198,7 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var international_number = getCookie("international_number");
+  var international_number = decodeURIComponent(getCookie("international_number"));
   if (international_number != null) {
     document.getElementById("international_number").innerHTML =
       international_number;
@@ -220,14 +220,14 @@ function fillDetails() {
     .catch((error) => {
       console.error("Error checking file existence:", error);
     });
-  var edu_id = getCookie("edu_id");
+  var edu_id = decodeURIComponent(getCookie("edu_id"));
   if (edu_id != null) {
     document.getElementById("edu_id").innerHTML = number;
   } else {
     document.getElementById("edu_id").innerHTML =
       "ВК " + Math.floor(Math.random() * 1000000000);
   }
-  var school = getCookie("school");
+  var school = decodeURIComponent(getCookie("school"));
   if (school != null) {
     document.getElementById("school").innerHTML = school.replace("_", " ");
   }

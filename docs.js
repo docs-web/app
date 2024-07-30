@@ -90,11 +90,11 @@ if (params.get("hti") != null) {
 
 function fillDetails() {
   var photo = decodeURIComponent(getCookie("photo"));
-  if (photo != null) {
+  if (photo != "null") {
     document.getElementById("photo").src = "photos/image-" + photo + ".png";
   }
   var birthday = decodeURIComponent(getCookie("birthday"));
-  if (birthday != null) {
+  if (birthday != "null") {
     Array.from(document.getElementsByClassName("birthday__day")).forEach(
       (element) => {
         element.innerHTML = birthday;
@@ -102,7 +102,7 @@ function fillDetails() {
     );
   }
   var number = decodeURIComponent(getCookie("number"));
-  if (number != null) {
+  if (number != "null") {
     document.getElementById("doc-id__number").innerHTML = number;
   } else {
     document.getElementById("doc-id__number").innerHTML =
@@ -123,7 +123,7 @@ function fillDetails() {
     });
 
   var surname = decodeURIComponent(getCookie("surname"));
-  if (surname != null) {
+  if (surname != "null") {
     Array.from(document.getElementsByClassName("surname")).forEach(
       (element) => {
         element.innerHTML = surname;
@@ -131,7 +131,7 @@ function fillDetails() {
     );
   }
   var name = decodeURIComponent(getCookie("name"));
-  if (name != null) {
+  if (name != "null") {
     Array.from(document.getElementsByClassName("legal_name")).forEach(
       (element) => {
         element.innerHTML = name;
@@ -139,14 +139,14 @@ function fillDetails() {
     );
   }
   var father = decodeURIComponent(getCookie("father"));
-  if (father != null) {
+  if (father != "null") {
     Array.from(document.getElementsByClassName("father")).forEach((element) => {
       element.innerHTML = father;
     });
   }
 
   var doc_type = decodeURIComponent(getCookie("doc-type"));
-  if (doc_type != null) {
+  if (doc_type != "null") {
     document.getElementById("doc-type").innerHTML = doc_type;
   }
 
@@ -164,19 +164,19 @@ function fillDetails() {
       console.error("Error checking file existence:", error);
     });
   var driving_groups = decodeURIComponent(getCookie("driving_groups"));
-  if (driving_groups != null) {
+  if (driving_groups != "null") {
     document.getElementById("driving_groups").innerHTML =
       driving_groups.replace(",", ", ");
   }
   var driver_number = decodeURIComponent(getCookie("driver_number"));
-  if (driver_number != null) {
+  if (driver_number != "null") {
     document.getElementById("driver_number").innerHTML = driver_number;
   } else {
     document.getElementById("driver_number").innerHTML =
       "BXO0" + Math.floor(Math.random() * 100000);
   }
   var tax_id = decodeURIComponent(getCookie("tax_id"));
-  if (tax_id != null) {
+  if (tax_id != "null") {
     document.getElementById("tax_id").innerHTML = number;
   } else {
     document.getElementById("tax_id").innerHTML = Math.floor(
@@ -199,7 +199,7 @@ function fillDetails() {
       console.error("Error checking file existence:", error);
     });
   var international_number = decodeURIComponent(getCookie("international_number"));
-  if (international_number != null) {
+  if (international_number != "null") {
     document.getElementById("international_number").innerHTML =
       international_number;
   } else {
@@ -221,14 +221,14 @@ function fillDetails() {
       console.error("Error checking file existence:", error);
     });
   var edu_id = decodeURIComponent(getCookie("edu_id"));
-  if (edu_id != null) {
+  if (edu_id != "null") {
     document.getElementById("edu_id").innerHTML = number;
   } else {
     document.getElementById("edu_id").innerHTML =
       "ВК " + Math.floor(Math.random() * 1000000000);
   }
   var school = decodeURIComponent(getCookie("school"));
-  if (school != null) {
+  if (school != "null") {
     document.getElementById("school").innerHTML = school.replace("_", " ");
   }
 }

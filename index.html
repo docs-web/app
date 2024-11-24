@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="icon" type="image/x-icon" href="assets/DiiaLogo.ico" />
+    <link rel="apple-touch-icon" href="assets/DiiaLogo.png" />
+    <link rel="stylesheet" href="docs.css" />
+    <title>Дія</title>
+    <link rel="manifest" href="manifest.json" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then(
+            (registration) => {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            (error) => {
+              console.log("ServiceWorker registration failed: ", error);
+            }
+          );
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="effects">
+      <div id="background"></div>
+      <div id="blur"></div>
+    </div>
+    <div class="how-to-install" id="hti">
+      <img src="assets/step1.png" class="hti-step" />
+      <img src="assets/step2.png" class="hti-step" />
+      <img src="assets/step3.png" class="hti-step" />
+    </div>
+    <div class="cards" id="cards">
+      <!-- passport -->
+      <div class="card-wrapper">
+        <div class="document" id="passport">
+          <div class="document-inside">
+            <div class="document__wrapper">
+              <h2 id="doc-type">Паспорт громадянина України</h2>
+              <div class="info__wrapper">
+                <div class="picture">
+                  <img id="photo" src="photos/photo.png" />
+                </div>
+                <div class="info">
+                  <div class="birthday info-element">
+                    <span id="birthday__text">Дата народження:</span>
+                    <span class="birthday__day">01.01.2000</span>
+                  </div>
+                  <div class="doc-id info-element">
+                    <span id="doc-id__text">Номер:</span>
+                    <span id="doc-id__number">00700000</span>
+                  </div>
+                  <div class="signature info-element">
+                    <img id="signature" src="photos/signature.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="running-string" id="running-string">
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+            </div>
+            <div class="full-name">
+              <p class="surname">Прізвище</p>
+              <p class="legal_name">Імʼя</p>
+              <p class="father">По батькові</p>
+            </div>
+          </div>
+          <div class="verify-card">
+            <div class="verify-card__timer">
+              <p id="code-timer">Код діятиме ще 3:00 хв</p>
+            </div>
+            <div id="passport-qr" class="verify-card__image">
+              <img id="verify-card__code" src="assets/qr-code.png" />
+            </div>
+            <div class="verify-card__options" id="vc-options">
+              <div class="vc-option" id="qr-code-option">
+                <img id="qrcode__img" src="assets/mini-qrcode-selected.png" />
+                <p>QR-код</p>
+              </div>
+              <div class="vc-option" id="bar-code-option">
+                <img id="barcode__img" src="assets/mini-barcode.png" />
+                <p>Штрихкод</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- international passport -->
+      <div class="card-wrapper">
+        <div class="document" id="international-passport">
+          <div class="document-inside">
+            <div class="document__wrapper doc-interpass">
+              <h2 id="doc-type">Закордонний паспорт</h2>
+              <div class="info__wrapper">
+                <div class="picture">
+                  <img id="international-photo" src="photos/photo.png" />
+                </div>
+                <div class="info">
+                  <div class="birthday info-element">
+                    <span id="i-birthday__text">Дата народження:</span>
+                    <span class="birthday__day">01.01.2000</span>
+                  </div>
+                  <div class="doc-id info-element">
+                    <span id="international__text">Номер:</span>
+                    <span id="international_number">GF600000</span>
+                  </div>
+                  <div class="signature info-element">
+                    <img id="i-signature" src="photos/signature.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="running-string">
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+            </div>
+            <div class="full-name">
+              <p class="surname">Прізвище</p>
+              <p class="legal_name">Імʼя</p>
+              <p class="father">По батькові</p>
+            </div>
+          </div>
+          <div class="verify-card">
+            <div class="verify-card__timer">
+              <p id="i-code-timer">Код діятиме ще 3:00 хв</p>
+            </div>
+            <div class="verify-card__image">
+              <img id="i-verify-card__code" src="assets/qr-code.png" />
+            </div>
+            <div class="verify-card__options" id="vc-options">
+              <div class="vc-option" id="i-qr-code-option">
+                <img id="i-qrcode__img" src="assets/mini-qrcode-selected.png" />
+                <p>QR-код</p>
+              </div>
+              <div class="vc-option" id="i-bar-code-option">
+                <img id="i-barcode__img" src="assets/mini-barcode.png" />
+                <p>Штрихкод</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- drive license -->
+      <div class="card-wrapper">
+        <div class="document" id="driver-license">
+          <div class="document-inside">
+            <div class="document__wrapper">
+              <h2 id="doc-type">Посвідчення водія</h2>
+              <div class="info__wrapper">
+                <div class="picture">
+                  <img id="driver-photo" src="photos/photo.png" />
+                </div>
+                <div class="info">
+                  <div class="birthday info-element">
+                    <span id="d-birthday__text">Дата народження:</span>
+                    <span class="birthday__day">01.01.2000</span>
+                  </div>
+                  <div class="driving-groups info-element">
+                    <span id="driving_text">Категорія:</span>
+                    <span id="driving_groups">A, B, B1</span>
+                  </div>
+                  <div class="doc-id info-element">
+                    <span id="driver_text">Номер документа:</span>
+                    <span id="driver_number">BXO000000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="running-string">
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+            </div>
+            <div class="full-name">
+              <p class="surname">Прізвище</p>
+              <p class="legal_name">Імʼя</p>
+              <p class="father">По батькові</p>
+            </div>
+          </div>
+          <div class="verify-card">
+            <div class="verify-card__timer">
+              <p id="d-code-timer">Код діятиме ще 3:00 хв</p>
+            </div>
+            <div class="verify-card__image">
+              <img id="d-verify-card__code" src="assets/qr-code.png" />
+            </div>
+            <div class="verify-card__options" id="d-vc-options">
+              <div class="vc-option" id="d-qr-code-option">
+                <img id="d-qrcode__img" src="assets/mini-qrcode-selected.png" />
+                <p>QR-код</p>
+              </div>
+              <div class="vc-option" id="d-bar-code-option">
+                <img id="d-barcode__img" src="assets/mini-barcode.png" />
+                <p>Штрихкод</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tax ID -->
+      <div class="card-wrapper">
+        <div class="document" id="tax-card">
+          <div class="document-inside">
+            <div class="document__wrapper">
+              <h2 id="doc-type">Картка платника податків</h2>
+              <p class="rnokpp">РНОКПП</p>
+              <div class="tax-name">
+                <span class="surname">Імʼя</span>
+                <span class="legal_name">Прізвище</span>
+                <span class="father">По батькові</span>
+              </div>
+              <div class="birthday info-element">
+                <span id="d-birthday__text">Дата народження:</span>
+                <span class="birthday__day">01.01.2000</span>
+              </div>
+            </div>
+            <div class="running-string tax">
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+            </div>
+            <div class="doc-num-id">
+              <p id="tax_id">0000000000</p>
+            </div>
+          </div>
+          <div class="verify-card">
+            <div class="verify-card__timer">
+              <p id="tax-code-timer">Код діятиме ще 3:00 хв</p>
+            </div>
+            <div class="verify-card__image">
+              <img id="tax-verify-card__code" src="assets/qr-code.png" />
+            </div>
+            <div class="verify-card__options" id="d-vc-options">
+              <div class="vc-option" id="tax-qr-code-option">
+                <img
+                  id="tax-qrcode__img"
+                  src="assets/mini-qrcode-selected.png"
+                />
+                <p>QR-код</p>
+              </div>
+              <div class="vc-option" id="tax-bar-code-option">
+                <img id="tax-barcode__img" src="assets/mini-barcode.png" />
+                <p>Штрихкод</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- education ID -->
+      <div class="card-wrapper">
+        <div class="document" id="education-card">
+          <div class="document-inside">
+            <div class="document__wrapper">
+              <h2 id="doc-type">Свідоцтво про вищу освіту</h2>
+              <p id="school">
+                Львівська академічна гімназія при Національному університеті
+                "Львівська політехніка"
+              </p>
+            </div>
+            <div class="running-string tax">
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+              <p class="running-str-p isRunning">
+                • Документ оновлено о 12:00 | 01.01.2024
+              </p>
+            </div>
+            <div class="doc-num-id">
+              <p id="edu_id">BK 000000000</p>
+            </div>
+          </div>
+          <div class="verify-card">
+            <div class="verify-card__timer">
+              <p id="tax-code-timer">Код діятиме ще 3:00 хв</p>
+            </div>
+            <div class="verify-card__image">
+              <img id="tax-verify-card__code" src="assets/qr-code.png" />
+            </div>
+            <div class="verify-card__options" id="d-vc-options">
+              <div class="vc-option" id="tax-qr-code-option">
+                <img
+                  id="tax-qrcode__img"
+                  src="assets/mini-qrcode-selected.png"
+                />
+                <p>QR-код</p>
+              </div>
+              <div class="vc-option" id="tax-bar-code-option">
+                <img id="tax-barcode__img" src="assets/mini-barcode.png" />
+                <p>Штрихкод</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar" id="nav_bar">
+      <div class="nav-bar__button" id="news">
+        <img src="assets/news.png" />
+        <p>Стрічка</p>
+      </div>
+      <div class="nav-bar__button" id="docs">
+        <img src="assets/docs-selected.png" />
+        <p>Документи</p>
+      </div>
+      <div class="nav-bar__button" id="services" onclick="openTG()">
+        <img src="assets/services.png" />
+        <p>Сервіси</p>
+      </div>
+      <div class="nav-bar__button" id="menu" onclick="copyUpd()">
+        <img src="assets/menu.png" />
+        <p>Меню</p>
+      </div>
+    </div>
+    <script src="docs.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Дія",
+  "short_name": "Дія",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "description": "Зручні документи",
+  "icons": [
+    {
+      "src": "assets/DiiaLogo.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}

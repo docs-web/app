@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="assets/DiiaLogo.ico">
+    <link rel="apple-touch-icon" href="assets/DiiaLogo.png"/>
+    <link rel="stylesheet" href="login.css">
+    <title>Дія</title>
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="effects">
+        <div id="background"></div>
+        <div id="blur"></div>
+    </div>
+    <div class="how-to-install" id="hti">
+        <img src="assets/step1.png" class="hti-step">
+        <img src="assets/step2.png" class="hti-step">
+        <img src="assets/step3.png" class="hti-step">
+    </div>
+    <div class="hello" id="hello">Привіт👋</div>
+    <div class="login" id="login_screen">
+        <div class="info">Код для входу</div>
+        <div class="input" id="code">
+            <div class="circle-button" id="c1"></div>
+            <div class="circle-button" id="c2"></div>
+            <div class="circle-button" id="c3"></div>
+            <div class="circle-button" id="c4"></div>
+            <div class="circle-button" id="c5"></div>
+        </div>
+        <div class="keyboard">
+            <div class="key" onclick="press(1)"><p>1</p></div>
+            <div class="key" onclick="press(2)"><p>2</p></div>
+            <div class="key" onclick="press(3)"><p>3</p></div>
+            <div class="key" onclick="press(4)"><p>4</p></div>
+            <div class="key" onclick="press(5)"><p>5</p></div>
+            <div class="key" onclick="press(6)"><p>6</p></div>
+            <div class="key" onclick="press(7)"><p>7</p></div>
+            <div class="key" onclick="press(8)"><p>8</p></div>
+            <div class="key" onclick="press(9)"><p>9</p></div>
+            <div class="func-button" id="face-id">
+                <img src="assets/face-id.png">
+            </div>
+            <div class="key" onclick="press(0)"><p>0</p></div>
+            <div class="func-button" onclick="press(10)">
+                <img src="assets/clear-key.png">
+            </div>
+        </div>
+    </div>
+    <script id="dynamicScript" src="login.js"></script>
+</body>
+</html>

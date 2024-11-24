@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="assets/DiiaLogo.ico">
+    <link rel="stylesheet" href="check.css">
+    <title>Дія</title>
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="effects">
+        <div id="background"></div>
+        <div id="blur"></div>
+    </div>
+    <div class="close-check-doc" onclick="close_window()">
+        <img src="assets/close-checked-document.png">
+    </div>
+    <div class="check-docs">Перевірка документів</div>
+    <div class="cards" id="cards">
+        <!-- passport -->
+        <div class="card-wrapper hidden" id="passport_w">
+            <div class="document" id="passport">
+                <div class="document-inside">
+                    <div class="document__wrapper">
+                    <h2 id="doc-type">Паспорт громадянина України</h2>
+                    <div class="info__wrapper">
+                        <div class="picture">
+                            <img id="photo" src="photos/photo.png">
+                        </div>
+                        <div class="info">
+                            <div class="birthday info-element">
+                                <span id="birthday__text">Дата народження:</span>
+                                <span class="birthday__day">01.01.2000</span>
+                            </div>
+                            <div class="doc-id info-element">
+                                <span id="doc-id__text">Номер:</span>
+                                <span id="doc-id__number">00700000</span>
+                            </div>
+                            <div class="signature info-element">
+                                <img id="signature" src="photos/signature.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="running-string" id="running-string">
+                    <p class="running-str-p isRunning">• Документ дійсний</p>
+                    <p class="running-str-p isRunning">• Документ дійсний</p>
+                    <p class="running-str-p isRunning">• Документ дійсний</p>
+                    <p class="running-str-p isRunning">• Документ дійсний</p>
+                </div>
+                <div class="full-name">
+                    <p class="surname">Прізвище</p>
+                    <p class="legal_name">Імʼя</p>
+                    <p class="father">По батькові</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- international passport -->
+        <div class="card-wrapper hidden" id="international-passport_w">
+            <div class="document" id="international-passport">
+                <div class="document-inside">
+                    <div class="document__wrapper doc-interpass">
+                        <h2 id="doc-type">Закордонний паспорт</h2>
+                        <div class="info__wrapper">
+                            <div class="picture">
+                                <img id="international-photo" src="photos/photo.png">
+                            </div>
+                            <div class="info">
+                                <div class="birthday info-element">
+                                    <span id="i-birthday__text">Дата народження:</span>
+                                    <span class="birthday__day">01.01.2000</span>
+                                </div>
+                                <div class="doc-id info-element">
+                                    <span id="international__text">Номер:</span>
+                                    <span id="international_number">GF600000</span>
+                                </div>
+                                <div class="signature info-element">
+                                    <img id="i-signature" src="photos/signature.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="running-string">
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                    </div>
+                    <div class="full-name">
+                        <p class="surname">Прізвище</p>
+                        <p class="legal_name">Імʼя</p>
+                        <p class="father">По батькові</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- drive license -->
+        <div class="card-wrapper hidden" id="driver-license_w">
+            <div class="document" id="driver-license">
+                <div class="document-inside">
+                    <div class="document__wrapper">
+                        <h2 id="doc-type">Посвідчення водія</h2>
+                        <div class="info__wrapper">
+                            <div class="picture">
+                                <img id="driver-photo" src="photos/photo.png">
+                            </div>
+                            <div class="info">
+                                <div class="birthday info-element">
+                                    <span id="d-birthday__text">Дата народження:</span>
+                                    <span class="birthday__day">01.01.2000</span>
+                                </div>
+                                <div class="driving-groups info-element">
+                                    <span id="driving_text">Категорія:</span>
+                                    <span id="driving_groups">A, B, B1</span>
+                                </div>
+                                <div class="doc-id info-element">
+                                    <span id="driver_text">Номер документа:</span>
+                                    <span id="driver_number">BXO000000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="running-string">
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                    </div>
+                    <div class="full-name">
+                        <p class="surname">Прізвище</p>
+                        <p class="legal_name">Імʼя</p>
+                        <p class="father">По батькові</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- tax ID -->
+        <div class="card-wrapper hidden" id="tax-card_w">
+            <div class="document" id="tax-card">
+                <div class="document-inside">
+                    <div class="document__wrapper">
+                        <h2 id="doc-type">Картка платника податків</h2>
+                        <p class="rnokpp">РНОКПП</p>
+                        <div class="tax-name">
+                            <span class="surname">Імʼя</span>
+                            <span class="legal_name">Прізвище</span>
+                            <span class="father">По батькові</span>
+                        </div>
+                        <div class="birthday info-element">
+                            <span id="d-birthday__text">Дата народження:</span>
+                            <span class="birthday__day">01.01.2000</span>
+                        </div>
+                    </div>
+                    <div class="running-string tax">
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                        <p class="running-str-p isRunning">• Документ дійсний</p>
+                    </div>
+                    <div class="tax-id">
+                        <p id="tax_id">0000000000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="check.js"></script>
+</html>

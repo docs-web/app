@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(42, 48, 64);
+            height: 100vh;
+        }
+        body p {
+            width: fit-content;
+            overflow: hidden;
+        }
+        input {
+            width: 99%;
+        }
+        ::placeholder {
+            color: black;
+            opacity: 0.6; /* Firefox */
+        }
+
+        .required {
+            background-color: rgb(255, 126, 126);
+        }
+
+        .optional {
+            background-color: rgb(255, 246, 163);
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .showOptional {
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            position: fixed;
+            bottom: 45px;
+        }
+
+        .button {
+            background-color: aquamarine;
+            height: 40px;
+            color: black;
+        }
+
+        #result {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="required">Що позначено червоним - обовʼязкове</p>
+    <p class="optional invisible">Що позначено жовтим - не обовʼязкове</p>
+    <p id="result"></p>
+    <button class="showOptional" type="button" onclick="showOptional()">Показати розширені параметри</button>
+
+
+    <form id="concatenateForm">
+        <label class="required" for="name"></label><br>
+        <input class="required" type="text" id="name" name="name" placeholder="Імʼя" required><br>
+
+        <label class="required" for="surname"></label><br>
+        <input class="required" type="text" id="surname" name="surname" placeholder="Прізвище" required><br>
+
+        <label class="required" for="father"></label><br>
+        <input class="required" type="text" id="father" name="father" placeholder="По батькові" required><br>
+
+        <label class="required" for="birthday"></label><br>
+        <input class="required" type="text" id="birthday" name="birthday" placeholder="Дата народження (приклад: 01.01.2000)" required><br>
+
+        <label class="required" for="photo"></label><br>
+        <input class="required" type="text" id="photo" name="photo" placeholder="Твій ID (той що тобі надіслали)"><br>
+
+        <label class="optional invisible" for="number"></label><br>
+        <input class="optional invisible" type="text" id="number" name="number" placeholder="Номер Українського паспорта (8 цифр)"><br>
+
+        <label class="optional invisible" for="international_number"></label><br>
+        <input class="optional invisible" type="text" id="international_number" name="international_number" placeholder="Номер закородонного паспорта (2 літери і 6 цифр)"><br>
+
+        <label class="optional invisible" for="driving_groups"></label><br>
+        <input class="optional invisible" type="text" id="driving_groups" name="driving_groups" placeholder="Категорії водійських прав (Через кому без пропусків)"><br>
+
+        <label class="optional invisible" for="driver_number"></label><br>
+        <input class="optional invisible" type="text" id="driver_number" name="driver_number" placeholder="Номер водійських прав (3 літери і 6 цифр)"><br>
+
+        <label class="optional invisible" for="tax_id"></label><br>
+        <input class="optional invisible" type="text" id="tax_id" name="tax_id" placeholder="Номер платника податків (10 цифр)"><br>
+    </form>
+    <div class="buttons">
+        <button class="button" type="button" onclick="concatenateStrings()">Згенерувати посилання</button>
+    </div>
+
+    <script>
+        function showOptional() {
+            Array.from(document.getElementsByClassName("optional")).forEach(element => {
+                element.classList.toggle("invisible");
+            });
+        }
+
+        function concatenateStrings() {
+            var name = document.getElementById("name").value;
+            var surname = document.getElementById("surname").value;
+            var father = document.getElementById("father").value;
+            var birthday = document.getElementById("birthday").value;
+            var photo = document.getElementById("photo").value;
+            var number = document.getElementById("number").value;
+            var driving_groups = document.getElementById("driving_groups").value;
+            var driver_number = document.getElementById("driver_number").value;
+            var tax_id = document.getElementById("tax_id").value;
+            var international_number = document.getElementById("international_number").value;
+
+
+            var result = "";
+
+            if (!(name.trim() === "")) {
+                result += "name=" + name + "&"
+            } else {
+                alert("Не вказано імʼя");
+                return false;
+            }
+
+            if (!(surname.trim() === "")) {
+                result += "surname=" + surname + "&"
+            } else {
+                alert("Не вказано прізвище");
+                return false;
+            }
+
+            if (!(father.trim() === "")) {
+                result += "father=" + father + "&"
+            } else {
+                alert("Не вказано по батькові");
+                return false;
+            }
+
+            if (!(birthday.trim() === "")) {
+                result += "birthday=" + birthday + "&"
+            } else {
+                alert("Не вказана дата народження");
+                return false;
+            }
+
+            if (!(photo.trim() === "")) {
+                result += "photo=" + photo + "&"
+            } else {
+                alert("Не вказано надане ID");
+                return false;
+            }
+
+            if (!(number.trim() === "")) {
+                result += "number=" + number + "&"
+            }
+
+            if (!(driving_groups.trim() === "")) {
+                result += "driving_groups=" + driving_groups + "&"
+            }
+
+            if (!(driver_number.trim() === "")) {
+                result += "driver_number=" + driver_number + "&"
+            }
+
+            if (!(tax_id.trim() === "")) {
+                result += "tax_id=" + tax_id + "&"
+            }
+
+            if (!(international_number.trim() === "")) {
+                result += "international_number=" + international_number + "&"
+            }
+
+            document.getElementById("result").innerHTML = "https://docs-web.github.io/app/index.html?" + result.replace(" ", "");
+
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = "https://docs-web.github.io/app/index.html?" + result.replace(" ", "");
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(tempTextArea);
+
+            window.location = "https://docs-web.github.io/app/index.html?hti=yes&" + result.replace(" ", "");
+        }
+    </script>
+
+</body>
+
+</html>

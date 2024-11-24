@@ -1,0 +1,349 @@
+@font-face {
+    font-family: e-Ukraine;
+    src:url("e-Ukraine/e-Ukraine-Regular.otf");
+}
+@font-face {
+    font-family: e-Ukraine-Light;
+    src:url("e-Ukraine/e-Ukraine-Light.otf");
+}
+@font-face {
+    font-family: e-Ukraine-Medium;
+    src:url("e-Ukraine/e-Ukraine-Medium.otf");
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: e-Ukraine;
+}
+meta[name="apple-mobile-web-app-status-bar-style"] {
+    content: default;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+        scale: 7;
+    }
+
+    50% {
+        scale: 10;
+    }
+
+    to {
+        rotate: 360deg;
+        scale: 7;
+    }
+}
+.effects {
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+#background {
+    z-index: 0;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    translate: -50% -50%;
+    background: linear-gradient(to right, rgb(223, 255, 127), rgb(112, 202, 216), rgb(216, 139, 255));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+}
+
+#blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    backdrop-filter: blur(12vmax);
+}
+.how-to-install {
+    z-index: 10;
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -30px;
+}
+.hti-step {
+    border-radius: 10px;
+    width: 360px;
+    max-width: 90%;
+    height: 200px;
+    max-height: 25%;
+}
+.nav-bar {
+    z-index: 5;
+    position: fixed;
+    height: 12%;
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-bar__button {
+    width: 24%;
+    display: grid;
+    place-items: center;
+}
+.nav-bar__button img {
+    width: 20px;
+    height: 20px;
+}
+.nav-bar__button p {
+    font-family: e-Ukraine-Light;
+    font-size: 12px;
+    color: white;
+}
+
+.cards {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    place-items: center;
+    height: 100%;
+    perspective: 1000px;
+    width: 200vw;
+    transition: transform 0.5s ease;
+}
+.card-wrapper {
+    display: flex;
+    place-items: center;
+    height: 88vh;
+    width: 100vw;
+    perspective: 1000px;
+    user-select: none;
+    touch-action: pan-y; 
+}
+.document {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border-radius: 20px;
+    height: 55vh;
+    width: 80vw;
+    max-width: 350px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+@keyframes flip {
+    from {
+        transform: rotateY(0deg) scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    to {
+        transform: rotateY(+180deg) scale(1);
+    }
+}
+.document.flipped {
+    animation: flip linear 0.4s;
+    animation-fill-mode: both;
+}
+@keyframes reverseFlip {
+    from {
+        transform: rotateY(180deg) scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    to {
+        transform: rotateY(0deg) scale(1);
+    }
+}
+.document:not(.flipped) {
+    animation: reverseFlip linear 0.4s;
+    animation-fill-mode: both;
+}
+.document-inside, .verify-card{
+    border-radius: 20px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.document-inside {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.verify-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transform: rotateY(180deg);
+}
+.verify-card__timer {
+    position: relative;
+}
+.verify-card__timer p {
+    color: gray;
+    font-size: 10px;
+}
+.verify-card__image {
+    position: relative;
+    width: 75%;
+}
+.verify-card__image img {
+    image-rendering: pixelated;
+    width: 100%;
+    height: 100%;
+}
+.verify-card__options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+}
+.vc-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 40%;
+}
+.vc-option img {
+    height: 100%;
+}
+
+.document__wrapper {
+    margin: 5%;
+}
+.document__wrapper h2 {
+    font-size: 20px;
+    font-family: e-Ukraine-Light;
+}
+.document__wrapper.doc-interpass h2 {
+    font-size: 21px;
+}
+.info__wrapper {
+    display: flex;
+    height: 22vh;
+}
+.picture {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+.picture img {
+    width: 101%;
+    height: 101%;
+    object-fit: fill;
+}
+.info {
+    margin-left: 5%;
+    /* height: 50%; */
+    width: 45%;
+}
+.info-element {
+    margin-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+}
+.info-element span {
+    user-select: none;
+    text-decoration: none;
+    font-family: e-Ukraine-Light;
+    font-size: 12px;
+    margin-bottom: 5%;
+}
+.signature {
+    align-items: center;
+    /* height: 40%; */
+    width: 100%;
+}
+.signature img {
+    height: 100%;
+    width: 40%;
+}
+
+.running-string {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(167, 237, 151), rgb(141, 208, 208));
+    position: absolute; /* Add this line */
+    bottom: 112px; /* Add this line */
+}
+.running-string.tax {
+    bottom: calc(20% - 8px); /* Add this line */
+}
+@keyframes run_right-to-left {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-280px);
+    }
+}
+.running-string p {
+    flex: 0 0 auto;
+    margin-left: 5px; 
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.running-string p.isRunning {
+    animation: run_right-to-left linear 8s infinite;
+}
+.running-string p:not(.isRunning) {
+    animation: paused;
+    transform: translateX(0);
+}
+.full-name {
+    height: 112px;
+    margin: 5%;
+    position: absolute; /* Change this line to absolute */
+    bottom: 0; /* Add this line */
+}
+.full-name p {
+    height: 8px;
+    font-size: 22px;
+}
+.tax-id {
+    height: 50px;
+    margin: 10%;
+    margin-left: 5%;
+    position: absolute; /* Change this line to absolute */
+    bottom: 0; /* Add this line */
+}
+.doc-num-id p {
+    position: absolute;
+    font-size: 24px;
+    bottom: 14px;
+    left: 14px;
+    float: bottom;
+}
+.tax-name {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.tax-name span {
+    user-select: none;
+    text-decoration: none;
+    font-family: e-Ukraine-Light;
+    font-size: 14px;
+}
+
+#school {
+    font-size: 12px;
+}
